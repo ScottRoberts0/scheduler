@@ -17,28 +17,29 @@ function reducer(state, action) {
         interviewers: action.interviewers
       };
     case SET_INTERVIEW: {
-      const days = state.days;
+      const newState = {...state.days};
+      
+      const days = state.days.map(day => {
+        let numOfSpots = day.spots;
+        if(day.name === state.day){
+ 
 
-      
-      for (let i = 0; i < days.length; i++) {
-      
-      
-        if (days[i].name === state.day) {
-          let numOfSpots = days[i].spots;
           if (action.interview === null) {
-            days[i].spots = numOfSpots + 1;
+            numOfSpots ++;
           } else {
-           
-           
-              days[i].spots = numOfSpots - 1;
+            numOfSpots --;
                      
           }
-        }
-      }
 
+        }
+        return {...day, spots: numOfSpots}
+      })
+      
+      console.log(newState.days)
+      console.log(state.days)
       const appointments = { ...state.appointments };
       appointments[action.id].interview = action.interview;
-      return { ...state, appointments, days };
+      return { ...state, appointments, days: days };
     }
     default:
       throw new Error(
