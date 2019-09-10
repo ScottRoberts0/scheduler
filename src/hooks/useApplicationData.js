@@ -28,15 +28,10 @@ function reducer(state, action) {
           if (action.interview === null) {
             days[i].spots = numOfSpots + 1;
           } else {
-            
-            if(days[i].appointments.includes(action.id)){
-              //Do Nothing!
-            }else{
+           
+           
               days[i].spots = numOfSpots - 1;
-            }
-
-
-          
+                     
           }
         }
       }

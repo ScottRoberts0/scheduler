@@ -8,8 +8,9 @@ import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
 
-const { useVisualMode } = require("../../hooks/useVisualMode");
 
+
+const { useVisualMode } = require("../../hooks/useVisualMode");
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -20,6 +21,9 @@ const CONFIRM = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
+
+
+
 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
@@ -53,7 +57,7 @@ export default function Appointment(props) {
   }
 
   return (
-  <article className="appointment">
+  <article className="appointment" data-testid="appointment">
     <Header
     time={props.time}
     />
