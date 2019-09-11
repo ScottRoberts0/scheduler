@@ -7,7 +7,6 @@ export default function InterviewerListItem(props) {
     "interviewers__item--selected": props.selected,
   })
   
-  
   return (
     <li 
     className={interviewerClass}

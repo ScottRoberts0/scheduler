@@ -1,13 +1,12 @@
 import { useEffect, useReducer } from "react";
-
-
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,
   SET_INTERVIEW
-} from '../reducers/application';
+} from "../reducers/application";
 
 const axios = require("axios");
+
 export function useApplicationData(initial) {
   const [state, dispatch] = useReducer(reducer, {
     day: "Monday",

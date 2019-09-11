@@ -52,6 +52,7 @@ const fixtures = {
     }
   }
 };
+
 const axios = {
   get: jest.fn(url => {
     if (url === "/api/days") {

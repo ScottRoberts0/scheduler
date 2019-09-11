@@ -123,10 +123,6 @@ describe("Appointment", () => {
        await waitForElement(() => queryByText(appointment, "Error"));
       
        expect(getByText(appointment, "Error while saving")).toBeInTheDocument();
-     
-
-
-
   });
 
   it("shows the delete error when failing to delete an existing appointment", async ()=> {
@@ -159,7 +155,7 @@ describe("Appointment", () => {
     await waitForElement(() => queryByText(appointment, "Error"));
   
     expect(getByText(appointment, "Error while deleting")).toBeInTheDocument();
-  })
+  });
 
 
 
